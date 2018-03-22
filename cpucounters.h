@@ -538,7 +538,6 @@ private:
 
     void initCStateSupportTables();
     bool discoverSystemTopology();
-    void printSystemTopology() const;
     bool initMSR();
     bool detectNominalFrequency();
     void initEnergyMonitoring();
@@ -1359,6 +1358,9 @@ public:
     //! \brief Setup ExtendedCustomCoreEventDescription object to read offcore (numa) counters for each processor type
     //! \param conf conf object to setup offcore MSR values
     void setupCustomCoreEventsForNuma(PCM::ExtendedCustomCoreEventDescription& conf) const;
+
+    //! \brief Print the system topology to standard error
+    void printSystemTopology() const;
 
     ~PCM();
 };

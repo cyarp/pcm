@@ -4247,9 +4247,11 @@ ServerPCICFGUncore::ServerPCICFGUncore(uint32 socket_, const PCM * pcm) :
         throw std::exception();
     }
 #endif
+#ifndef PCM_SILENT
     std::cerr << "Socket "<<socket_<<": "<<
         num_imc<<" memory controllers detected with total number of "<< getNumMCChannels() <<" channels. "<<
         getNumQPIPorts()<< " QPI ports detected."<<std::endl;
+#endif
 }
 
 ServerPCICFGUncore::~ServerPCICFGUncore()

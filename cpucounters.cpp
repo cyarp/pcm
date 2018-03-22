@@ -2720,7 +2720,9 @@ void PCM::cleanup()
 
     if (MSR.empty()) return;
 
+#ifndef PCM_SILENT
     std::cerr << "Cleaning up" << std::endl;
+#endif
 
     if (decrementInstanceSemaphore())
         cleanupPMU();
